@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的博客</title>
+		<link rel="stylesheet" type="text/css" href="css/blog.css"/>
+	</head>
+    <style>
+        *{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #E4E4E4;
+	margin-top: 20px;
+}
+header{
+	background-color: red;
+	height: 60px;
+	width: 1300px;
+	margin: 0 auto;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+h1{
+	font-family: "楷体";
+	font-size: 20px;
+	color: #fff;
+	margin: 15px 20px;
+	float: left;
+}
+#text{
+	width: 600px;
+	height: 30px;
+	padding: 5px;
+	border-color: #E4E4E4;
+	border-radius: 8px;
+	margin-left: 100px;
+	margin-top: 8px;
+}
+#search{
+	width: 80px;
+	height: 40px;
+	margin-left: 10px;
+}
+nav{
+	height: 30px;
+	width:1300px;	
+	background-color: blue;
+	font-size: 18px;
+	margin: 0 auto;
+}
+nav ul{
+	width: 650px;
+	height: 30px;
+}
+nav ul li{
+	list-style: none;
+	display: inline;
+	padding: 6px;
+	margin:15px;
+	color: #000000;
+}
+nav ul li a{
+	text-decoration: none;
+}
+nav ul li a:link{
+	color: #999999;
+}
+nav ul li a:visited{
+	color: #ffffff;
+}
+nav ul li a:hover{
+	color: #aaaaff;
+}
+nav ul li a:active{
+	color: #ffffff;
+}
+
+article{
+	height: 260px;
+	width: 800px;
+	border: 1px solid #0099ff;
+	margin: 20px;
+	float: left;
+}
+#article_title{
+	border-bottom: 1px dashed #0099ff;
+	margin: 10px auto;
+	width: 700px;
+	height:30px;
+	font-size: 20px;
+	color: #444444;
+	text-decoration: none;
+}
+#article_body{
+	border-bottom: 1px solid #0099ff;
+	margin: 10px auto;
+	width: 700px;
+	height:140px;
+	text-indent: 2em;
+	padding: 5px;
+	text-align: justify;
+	font-size: 16px;
+	color: #666666;
+	line-height: 30px;
+}
+#article_footer{
+	vertical-align: auto;
+	margin: 10px auto;
+	padding: 10px;
+	width: 700px;
+	height:20px;
+	color: #999999;
+}
+aside{
+	width: 400px;
+	height:562px;
+	border: 1px solid #0099ff;
+	float: right;
+	margin: 20px;
+	line-height: 30px;
+	color: #666666;
+}
+section{
+	width: 1300px;
+	height: 610px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+footer{
+	height: 30px;
+	width: 1300px;
+	margin: 0 auto;
+	color: #666666;
+	text-align: center;
+	background-color: #000000;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-size: 18px;
+}
+p{
+	text-indent: 2em;
+	text-align: justify;
+	margin:5px;
+}
+h2{
+	font-size: 20px;
+	color: #444444;
+}
+#article_title a,h2 a{
+	text-decoration: none;
+}
+#article_title a:link{
+	color: #444444;
+}
+#article_title a:visited{
+	color: #000000;
+}
+#article_title a:hover{
+	color: #cccccc;
+}
+#article_title a:active{
+	color: #eeeeee;
+}
+h2{
+	margin: 10px auto;
+}
+h2 a:link{
+	color: #444444;
+}
+h2 a:visited{
+	color: #000000;
+}
+h2 a:hover{
+	color: #cccccc;
+}
+h2 a:active{
+	color: #eeeeee;
+}
+    </style>
+	<body>
+		<header>
+			<h1>滑稽哥的个人博客</h1>
+			<input type="text" name="text" id="text" placeholder="请输入搜索内容："/>
+			<input type="submit" name="search" id="search" value="搜索" />
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">博文</a></li>
+				<li><a href="#">相册</a></li>
+				<li><a href="#">个人档案</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<aside>
+					<h2><a href="#">表单提交与用户体验</a></h2>
+					<p>基于现在流行的Ajax+跨域POST（CORS）技术，我们很可能不使用form元素直接向服务器提交数据。这虽然可行，但在大多数情况下存在着体验劣化现象。
+					</p>
+					<p>JavaScript 可用来在数据被送往服务器前对 HTML 表单中的这些输入数据进行验证。 被 JavaScript 验证的这些典型的表单数据有：
+						<p>用户是否已填写表单中的必填项目？</p>
+						<p>用户输入的邮件地址是否合法？</p>
+						<p>用户是否已输入合法的日期？</p>
+						<p>用户是否在数据域 (numeric field) 中输入了文本？</p>
+					</p>
+					
+					<p>
+						下面的函数用来检查用户是否已填写表单中的必填（或必选）项目。假如必填或必选项为空，那么警告框会弹出，并且函数的返回值为 false，否则函数的返回值则为 true（意味着数据没有问题）：
+					</p>	
+					<p>
+						...
+					</p>
+				</aside>
+					
+				<article>
+					<div id="article_title">
+						<a href="#">关于form与表单提交操作的一切</a>
+					</div>
+					<div id="article_body">
+						你知道，一个表单里面只要有form元素，如果没有给action加一个默认值，为空白的时候，当你刷新页面时，会弹出一个警告框提示你已经填入表单，刷新数据将会丢失。 如果一个表单里面有一个type="submit"的button、或者type="submit"的input，或者type="image"的input，点击则会触发表单提交动作。
+					</div>
+					<div id="article_footer">
+						编辑于2024.1.6
+					</div>
+				</article>
+
+				<article>
+					<div id="article_title">
+						<a href="#">X-Frame-Options防止网页放在iframe中</a>
+					</div>
+					<div id="article_body">
+						在自己新做的一个网站“开发头条”上发现用iframe嵌入github的内容时，一篇空白，什么东西都没有。打开chrome调试，发现里面输出一个错误提示：Refused to display 'https://github.com/hwclass/awesome-sound' in a frame because it set 'X-Frame-Options' to 'deny'. 你认识这个东西吗？
+					</div>
+					<div id="article_footer">
+						编辑于2024.1.6
+					</div>
+				</article>
+
+			</section>
+		</main>
+		<footer>
+			版权所有2024
+		</footer>
+	</body>
+</html>
